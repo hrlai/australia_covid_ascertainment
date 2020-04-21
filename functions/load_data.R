@@ -43,7 +43,7 @@ load_cases_by_source_and_state <- function() {
   
   # use Chris' git repo (included as a submodule) to download the data
   python <- switch(Sys.info()["user"],
-                   nick = "/Users/nick/miniconda3/bin/python",
+                   nick = " /usr/bin/python",
                    "python")
 
   # scrape data into the submodule
@@ -97,7 +97,7 @@ load_dataset <- function (state, path, cumulative) {
                    stringsAsFactors = FALSE)
   names <- names(vals)
   names[1] <- "date"
-  names <- gsub("Overseas...Interstate", "Overseas", names)
+  names <- gsub("Overseas.acquired", "Overseas", names)
   names(vals) <- names
   if (!"Other" %in% names) {
     vals$Other <- 0

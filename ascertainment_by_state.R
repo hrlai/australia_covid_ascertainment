@@ -1,4 +1,6 @@
 # Time-series estimates of reporting rates for Australian states
+library(tidyverse)
+
 
 # load misc functions
 source("functions/load_data.R")
